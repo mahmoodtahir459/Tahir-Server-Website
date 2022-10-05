@@ -1,0 +1,52 @@
+.boddy{
+ display:flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: auto;
+}
+.header{
+    background-color:#6699ff;
+    position: relative;
+    top: -1.5vw;
+    width: 100vw;
+    left: -1.5vw;
+}
+.intro{
+    font-size: 3vw;
+}
+#introText{
+ font-size: 5vw;
+
+}
+.serverBoxes{
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    font-size:inherit;
+    display: flex;
+    flex: 33vw;
+
+}
+.boxIndividual{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 250px;
+    height: 250px;
+    background-color: beige;
+    margin-left: auto;
+    margin-right: auto;  
+    background-clip: content-box;
+    padding: 20px;
+}
+.boxContent{
+    margin: 15px;
+}
+.discordBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: auto;
+}
