@@ -6,40 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="title">Tahir's Servers</title>
     <link rel="stylesheet" href="css/main.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
     <div class="header">
         <header>
-            <h1 style="display:flex; flex-flow: column; align-items: center; justify-content: center; height: 6.75vw;">Tahir's Servers</h1>
-            <img src=images/tahirsserverslogo.jpg alt="Logo of Tahir's Servers" style="width: 15vw; display:block; position:absolute; top: 1vxw; left:.25vw; border: solid; border-color: black;">
+            <h1 id="title" style="color: C49BBB;">Tahir's Servers</h1>
         </header>
+
     </div>
 
 
     <div class="boddy">
-        <div class="intro">
-            <h5>Welcome to Tahir's Servers</h5>
-            <p>A vast place of different Servers</p>
-            <p>Come Look</p>
-        </div>
         <div class="serverBoxes">
             <div class="boxIndividual">
                 <div class="boxContent">
                     <h3>Minecraft Java Edition Server</h3>
-                    <p>Come play Java at:</p>
-                    <p>Play.tahirsservers.online</p>
-                    <p><b>HAHA ISP BLOCKED PORT FORWDING ALL GAME SERVERS ARE DOWN</b></p>
-                </div>
-            </div>
-            <br>
-            <div class="boxIndividual">
-                <div class="boxContent">
-                    <h3>Minecraft Bedrock Edition Server</h3>
-                    <p>Come play bedrock at: </p>
-                    <p>PlayBedrock.tahirsservers.online</p>
-                    <p>(In development come back soon)</p>
-                    <p><b>HAHA ISP BLOCKED PORT FORWDING ALL GAME SERVERS ARE DOWN</b></p>
+                    <p>Come play Java</p>
+                    <p>Fill out the form to be whitelisted</p>
+                    <a href="SubSites/javaForm.html">Click Here</a>
                 </div>
             </div>
             <br>
@@ -50,7 +36,6 @@
                     <p>PlayModded.tahirsservers.online</p>
                     <a href="">List of Mods</a>
                     <p>(In development come back soon)</p>
-                    <p><b>HAHA ISP BLOCKED PORT FORWDING ALL GAME SERVERS ARE DOWN</b></p>
                 </div>
             </div>
             <br>
@@ -62,17 +47,48 @@
             </div>
             <br><br>
             <div class="suggestions">
-                <form>
+                <form action="https://docs.google.com/forms/d/e/1FAIpQLSdT6C6a5gnqFIsQOFZisLh8b0hXgMXA2ICCMnelRcTcMyO-ug/formResponse?" id="myform">
                     <label for="suggestion">Suggestions?</label>
-                    <input type="text-field" id="suggestion">
-                    <input type="submit" value="Submit">
+                    <input type="text-field"name="entry.1781592938" id="suggestion">
+                    <input type="submit" value="Submit" onclick="rSet()" >
                 </form>
             </div>
+
         </div>
         <br><br><br>
-        <p>P.S THIS IS STILL IN DEVELOPMENT</p>
+        <p id="resultMessage">P.S THIS IS STILL IN DEVELOPMENT</p>
     </div>
+    <script>
+        $(document).ready(function() {
+            $('#myform').submit(function(e) {
+                e.preventDefault(); // Prevent the default form submission
+                var formData = $(this).serialize(); // Serialize the form data
+                $.ajax({
+                    type: 'POST',
+                    url: $(this).attr('action'),
+                    data: formData,
+                    success: function(response) {
+                       console.log("BRUH")  
+                    },
+                    error: function() {
+                    rSet();
+                    }
+                });
+            });
+        });
+        function rSet(){
+            console.log("BRO");
+            var form = document.getElementById('myform');
+        var suggestionInput = document.getElementById('suggestion');
+        var resultMessage = document.getElementById('resultMessage');
+        suggestionInput.innerText='';
+        resultMessage.innerHTML = "FORM SUBMITTED";
+        setTimeout(function() {
+        resultMessage.innerHTML = "P.S THIS IS STILL IN DEVELOPMENT";
+}, 2000);
+    }
 
+    </script>
 
 </body>
 

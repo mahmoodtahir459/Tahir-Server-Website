@@ -1,23 +1,35 @@
 .boddy{
  display:flex;
+ 
     flex-direction: column;
     align-items: center;
     text-align: center;
     flex: auto;
 }
-.header{
-    background-color:#6699ff;
-    position: relative;
-    top: -1.5vw;
-    width: 100vw;
-    left: -1.5vw;
-}
+
 .intro{
     font-size: 3vw;
 }
 #introText{
  font-size: 5vw;
 
+}
+#title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: auto;
+    color: rgb(107,5, 4);
+    padding-left: .25vw;
+    padding-right: .25vw;
+    padding-top: .25vh;
+    padding-bottom: .25vh;
+    background-color: 0A2463;
+    background-clip: border-box;
+    border-top: 10vw;
+    border: solid;
+    border-radius: 100vw;
+    border-width: .25vmax;
 }
 .serverBoxes{
     flex-direction: row;
@@ -35,7 +47,7 @@
     text-align: center;
     width: 250px;
     height: 250px;
-    background-color: beige;
+    background-color: D1BCE3;
     margin-left: auto;
     margin-right: auto;  
     background-clip: content-box;
